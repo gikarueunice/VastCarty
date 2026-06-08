@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="VastCarty/VastCarty.csproj" />
+  <Project Path="VastCartyDBL/VastCartyDBL.csproj" />
+</Solution>
