@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VastCartyDBL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7899bd40fa287c92fa8946a97cdf03731e3011d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("VastCartyDBL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VastCartyDBL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
