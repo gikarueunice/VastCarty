@@ -3,16 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{32AC4A9A-BF20-2C4A-4550-6995E1D74257}|VastCartyDBL\\VastCartyDBL.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcartydbl\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32AC4A9A-BF20-2C4A-4550-6995E1D74257}|VastCartyDBL\\VastCartyDBL.csproj|solutionrelative:vastcartydbl\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcarty\\viewmodels\\auth\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|solutionrelative:vastcarty\\viewmodels\\auth\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcarty\\viewmodels\\auth\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|solutionrelative:vastcarty\\viewmodels\\auth\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcarty\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|solutionrelative:vastcarty\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcarty\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|solutionrelative:vastcarty\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcarty\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|solutionrelative:vastcarty\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32AC4A9A-BF20-2C4A-4550-6995E1D74257}|VastCartyDBL\\VastCartyDBL.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcartydbl\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32AC4A9A-BF20-2C4A-4550-6995E1D74257}|VastCartyDBL\\VastCartyDBL.csproj|solutionrelative:vastcartydbl\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32AC4A9A-BF20-2C4A-4550-6995E1D74257}|VastCartyDBL\\VastCartyDBL.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcartydbl\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32AC4A9A-BF20-2C4A-4550-6995E1D74257}|VastCartyDBL\\VastCartyDBL.csproj|solutionrelative:vastcartydbl\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32AC4A9A-BF20-2C4A-4550-6995E1D74257}|VastCartyDBL\\VastCartyDBL.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcartydbl\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32AC4A9A-BF20-2C4A-4550-6995E1D74257}|VastCartyDBL\\VastCartyDBL.csproj|solutionrelative:vastcartydbl\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcarty\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|solutionrelative:vastcarty\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcarty\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|solutionrelative:vastcarty\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcarty\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C9D5BBF-D9D3-CD83-FE95-9506A22F94B5}|VastCarty\\VastCarty.csproj|solutionrelative:vastcarty\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32AC4A9A-BF20-2C4A-4550-6995E1D74257}|VastCartyDBL\\VastCartyDBL.csproj|c:\\users\\admin\\documents\\projects\\vastcarty\\vastcartydbl\\bl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,11 +74,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\ViewModels\\Auth\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "VastCarty\\ViewModels\\Auth\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\ViewModels\\Auth\\LoginViewModel.cs",
+              "RelativeToolTip": "VastCarty\\ViewModels\\Auth\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T12:32:23.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\ViewModels\\Auth\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "VastCarty\\ViewModels\\Auth\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\ViewModels\\Auth\\RegisterViewModel.cs",
+              "RelativeToolTip": "VastCarty\\ViewModels\\Auth\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T12:31:56.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "VastCarty\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "VastCarty\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T12:30:34.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "VastCarty\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "VastCarty\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T12:28:50.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductServices.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Services\\ProductServices.cs",
+              "RelativeDocumentMoniker": "VastCartyDBL\\Services\\ProductServices.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Services\\ProductServices.cs",
+              "RelativeToolTip": "VastCartyDBL\\Services\\ProductServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T12:28:23.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserServices.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Services\\UserServices.cs",
+              "RelativeDocumentMoniker": "VastCartyDBL\\Services\\UserServices.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Services\\UserServices.cs",
+              "RelativeToolTip": "VastCartyDBL\\Services\\UserServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T12:28:01.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "VastCartyDBL\\Models\\Users.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Models\\Users.cs",
+              "RelativeToolTip": "VastCartyDBL\\Models\\Users.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAIwBsAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T12:27:05.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Models\\Products.cs",
+              "RelativeDocumentMoniker": "VastCartyDBL\\Models\\Products.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Models\\Products.cs",
+              "RelativeToolTip": "VastCartyDBL\\Models\\Products.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T12:27:30.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "VastCarty\\Views\\Home\\Index.cshtml",
@@ -59,19 +195,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "VastCarty\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\Controllers\\AuthController.cs",
               "RelativeToolTip": "VastCarty\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T08:40:36.43Z"
+              "WhenOpened": "2026-06-09T08:40:36.43Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Repositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "VastCartyDBL\\Repositories\\IUserRepository.cs",
@@ -83,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\UOW\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "VastCartyDBL\\UOW\\IUnitOfWork.cs",
@@ -95,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "VastCartyDBL\\Repositories\\UserRepository.cs",
@@ -107,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\UOW\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "VastCartyDBL\\UOW\\UnitOfWork.cs",
@@ -119,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "Bl.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCartyDBL\\Bl.cs",
               "RelativeDocumentMoniker": "VastCartyDBL\\Bl.cs",
@@ -131,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\Projects\\VastCarty\\VastCarty\\appsettings.json",
               "RelativeDocumentMoniker": "VastCarty\\appsettings.json",
