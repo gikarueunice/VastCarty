@@ -1,7 +1,17 @@
+using VastCartyDBL.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IUserRepository>(sp=>
+{
+    var configuration = sp.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection")
+    ??throw new InvalidOperationException("Connectionstring does not exist");
+
+    return new UserRepository(connectionString);
+});
 
 var app = builder.Build();
 

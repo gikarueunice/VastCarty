@@ -4,8 +4,7 @@ using System.Text;
 
 namespace VastCartyDBL.Services
 {
-    public class ProductServices : IProductServices
+    public class IProductServices
     {
-        public ProductServices() { }
     }
 }

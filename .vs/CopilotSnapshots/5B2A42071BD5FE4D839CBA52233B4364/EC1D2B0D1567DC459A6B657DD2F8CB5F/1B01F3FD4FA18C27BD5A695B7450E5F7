@@ -81,13 +81,13 @@ namespace VastCartyDBL.Services
             using var connection = new SqlConnection(_connectionString);
             return await connection.QuerySingleOrDefaultAsync<Users>(sql, new { Email });
         }
-        public async Task<Users?> GetUserByPhoneNumberAsync(string PhoneNumber)
+        public async Task<Users> GetUserByPhoneNumberAsync(string PhoneNumber)
         {
             const string sql = "SELECT * FROM Users WHERE PhoneNumber = @PhoneNumber";
             using var connection = new SqlConnection(_connectionString);
             return await connection.QuerySingleOrDefaultAsync<Users>(sql, new { PhoneNumber });
         }
-        public async Task<Users> DeleteUserAsync(int id)
+        public async Task<bool> DeleteUserAsync(int id)
         {
             const string sql = "DELETE FROM Users WHERE Id = @Id";
             using var connection = new SqlConnection(_connectionString);
@@ -108,7 +108,7 @@ namespace VastCartyDBL.Services
             using var connection = new SqlConnection(_connectionString);
             return await connection.QuerySingleOrDefaultAsync<Users>(sql, new { EmailOTP = emailOTP, Now = DateTime.UtcNow });
         }
-        public async Task<Users> GetUserByPhoneOTPAsync(string phoneOTP)
+        public async Task<Users?> GetUserByPhoneOTPAsync(string phoneOTP)
         {
             const string sql = "SELECT * FROM Users WHERE PhoneOTP = @PhoneOTP AND PhoneOTPExpiry > @Now";
             using var connection = new SqlConnection(_connectionString);

@@ -1,0 +1,207 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.IdentityModel.Tokens;
+using VastCarty.ViewModels.Auth;
+using VastCartyDBL.Models;
+using VastCartyDBL.Services;
+
+namespace VastCarty.Controllers
+{
+    public class AuthController : Controller
+    {
+        private readonly IUserServices _userServices;
+        private readonly IEmailServices _emailServices;
+        private readonly ILogger<AuthController> _logger;
+        // store pending registration OTPs in-memory (short-term)
+        private static readonly Dictionary<int, string> _pendingRegistrations = new();
+        private string returnUrl;
+
+        public AuthController(ILogger<AuthController>logger, IEmailServices emailServices, IUserServices userServices)
+        {
+            _userServices = userServices;
+            _emailServices = emailServices;
+            _logger = logger;
+        }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            var model = new LoginViewModel
+            {
+                ReturnUrl = returnUrl
+            };
+
+            // Clear any existing messages
+            TempData.Remove("Error");
+            TempData.Remove("Success");
+            TempData.Remove("Warning");
+
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                if (string.IsNullOrEmpty(model.Email))
+                    TempData["Error"] = "Please enter your email address.";
+                else if (string.IsNullOrEmpty(model.Password))
+                    TempData["Error"] = "Please enter your password.";
+                else
+                    TempData["Error"] = "Please correct the errors in the form.";
+
+                return View(model);
+            }
+
+            try
+            {
+                var identifier = (model.Email ?? string.Empty).Trim();
+                _logger.LogInformation("Login attempt for identifier: {Identifier}", identifier);
+
+                // Try email lookup first, then phone fallback
+                var user = await _userServices.GetUserByEmailAsync(identifier);
+                if (user == null)
+                {
+                    _logger.LogDebug("User lookup by email failed for {Identifier}, trying phone lookup", identifier);
+                    user = await _userServices.GetUserByPhoneNumberAsync(identifier);
+                }
+
+                if (user == null)
+                {
+                    _logger.LogWarning("Login attempt with non-existent identifier: {Identifier}", identifier);
+                    TempData["Error"] = "No account found with this email/phone. Please check your details or <a href='/auth/register'>create a new account</a>.";
+                    ModelState.AddModelError("", "Invalid email or password");
+                    return View(model);
+                }
+
+                if ((bool)!user.IsActive)
+                {
+                    TempData["Error"] = "Your account has been deactivated. Please contact support for assistance.";
+                    return View(model);
+                }
+
+                if (!user.IsEmailVerified)
+                {
+                    var otp = new Random().Next(100000, 999999).ToString();
+
+                    _pendingRegistrations[user.Id] = otp;
+
+                    await _emailServices.SendRegistrationOTPAsync(
+                        user.Email,
+                        otp,
+                        user.UserName);
+
+                    TempData["Warning"] =
+                    "Your account isn't verified yet. A new OTP code has been sent to your email.";
+
+                    return RedirectToAction(
+                        "VerifyRegistration",
+                        new { userId = user.Id }
+                        );
+                }
+
+                // Verify password
+                // Verify password
+                bool isPasswordValid;
+
+                try
+                {
+                    if (!string.IsNullOrEmpty(user.PasswordHash))
+                    {
+                        // old users
+                        var oldHash = BCrypt.Net.BCrypt.HashPassword(
+                            model.Password  
+                        );
+
+                        isPasswordValid = oldHash == user.PasswordHash;
+                    }
+                    else
+                    {
+                        // new users
+                        isPasswordValid = BCrypt.Net.BCrypt.Verify(
+                            model.Password,
+                            user.PasswordHash
+                        );
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex,
+                        "Password verification error for {Email}",
+                        model.Email);
+
+                    TempData["Error"] = "Password verification error";
+                    return View(model);
+                }
+
+                if (!isPasswordValid)
+                {
+                    _logger.LogWarning("Failed login attempt for {Email} - Incorrect password", model.Email);
+                    TempData["Error"] = "Incorrect password. Please try again. <a href='/auth/forgot-password'>Forgot your password?</a>";
+                    ModelState.AddModelError("", "Invalid email or password");
+                    return View(model);
+                }
+
+                // Check for multiple failed attempts (you can implement this in your user service)
+                if (await _userServices.HasExceededLoginAttemptsAsync(user.Id))
+                {
+                    TempData["Error"] = "Too many failed login attempts. Your account has been temporarily locked. Please try again in 15 minutes or reset your password.";
+                    return View(model);
+                }
+
+                // Update last login
+                user.LastLoginAtUtc = DateTime.UtcNow;
+                await _userServices.UpdateUserAsync(user);
+
+                // Clear any failed login attempts
+                await _userServices.ResetLoginAttemptsAsync(user.Id);
+
+                // Sign in the user
+                await SignInUserAsync(user, model.RememberMe);
+
+                TempData["Success"] = $"Welcome back, {user.UserName}! 👋";
+
+                if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+                {
+                    return Redirect(model.ReturnUrl);
+                }
+
+                return RedirectToAction("Index", "Dashboard");
+            }
+            catch (UserLockedException ex)
+            {
+                _logger.LogWarning(ex, "Locked account login attempt for {Email}", model.Email);
+                TempData["Error"] = "Your account has been locked due to multiple failed attempts. Please reset your password or contact support.";
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,
+                    "Error during login for {Email}",
+                    model.Email);
+
+                TempData["Error"] =
+                    ex.Message;
+
+                return View(model);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            var model = new RegisterViewModel();
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult Regiter()
+        {
+            return View();
+        }
+
+        public IActionResult Logout()
+        {
+            return View();
+        }
+
+    }
+}

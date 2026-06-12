@@ -1,6 +1,55 @@
-﻿namespace VastCarty.ViewModels.Auth
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace VastCarty.ViewModels.Auth
 {
     public class RegisterViewModel
     {
+        [Required(ErrorMessage = "Full name is required")]
+        [Display(Name = "Full Name")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "Full name must be between 2 and 100 characters")]
+        public string UserName { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Email address is required")]
+        [EmailAddress(ErrorMessage = "Invalid email address")]
+        [Display(Name = "Email Address")]
+        [StringLength(100, ErrorMessage = "Email cannot exceed 100 characters")]
+        public string Email { get; set; } = string.Empty;
+
+
+        [Required(ErrorMessage = "Phone number is required")]
+        [Display(Name = "Phone Number")]
+        [Phone(ErrorMessage = "Invalid phone number format")]
+        [StringLength(20, MinimumLength = 10, ErrorMessage = "Phone number must be between 10 and 20 characters")]
+        [RegularExpression(@"^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?[-\s\.]?[0-9]{3,4}[-\s\.]?[0-9]{3,4}$",
+            ErrorMessage = "Please enter a valid phone number (e.g., +1234567890 or 123-456-7890)")]
+        public string PhoneNumber { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Password is required")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        [StringLength(100, MinimumLength = 8, ErrorMessage = "Password must be at least 8 characters")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
+            ErrorMessage = "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character")]
+        public string Password { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Please confirm your password")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
+        [Compare("Password", ErrorMessage = "Passwords do not match")]
+        public string ConfirmPassword { get; set; } = string.Empty;
+
+        [Display(Name = "Date of Birth")]
+        [DataType(DataType.Date)]
+        [MinimumAge (18, ErrorMessage = "You must be at least 18 years old to register")]
+        public DateTime? DateOfBirth { get; set; }
+
+        [Display(Name = "Gender")]
+        public string? Gender { get; set; }
+
+        [Required(ErrorMessage = "You must accept the terms and conditions")]
+        [Display(Name = "I agree to the Terms and Conditions and Privacy Policy")]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "You must accept the terms and conditions")]
+        public bool AcceptTerms { get; set; }
+
     }
 }

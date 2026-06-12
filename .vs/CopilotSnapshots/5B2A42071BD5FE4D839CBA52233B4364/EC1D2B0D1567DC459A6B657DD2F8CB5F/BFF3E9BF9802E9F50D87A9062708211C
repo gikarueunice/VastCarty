@@ -4,8 +4,8 @@ using System.Text;
 
 namespace VastCartyDBL.Services
 {
-    public class ProductServices : IProductServices
+    public class EmailServices:IEmailServices
     {
-        public ProductServices() { }
+
     }
 }
