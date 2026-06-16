@@ -25,13 +25,13 @@ namespace VastCartyDBL.Services
         {
             const string sql = @"
                 INSERT INTO Users (
-                    @FullName, @Email, @PasswordHash, @Salt, @DateOfBirth, @Gender,
+                    @UserName,@FisrtName, @LastName, @Email, @PasswordHash, @Salt, @DateOfBirth, @Gender,
                     @Height, @Weight,@IsEmailVerified,
-                    @EmailVerificationToken, @CreatedAt, @IsActive
+                    @EmailVerificationToken, @CreatedAtUtc, @IsActive
                 ) VALUES (
-                    @FullName, @Email, @PasswordHash, @Salt, @DateOfBirth, @Gender,
+                    @UserName,@FisrtName, @LastName, @Email, @PasswordHash, @Salt, @DateOfBirth, @Gender,
                     @Height, @Weight,@IsEmailVerified,
-                    @EmailVerificationToken, @CreatedAt, @IsActive
+                    @EmailVerificationToken, @CreatedAtUtc, @IsActive
                 );
                 SELECT CAST(SCOPE_IDENTITY() as int);";
 
@@ -46,28 +46,23 @@ namespace VastCartyDBL.Services
 
             const string sql = @"
                 UPDATE Users SET
-                    FullName = @FullName,
+                    UserName = @FullName,
+                    FirstNaame= @FirstName,
+                    LastName = @LastName,
                     Email = @Email,
                     PasswordHash = @PasswordHash,
                     Salt = @Salt,
                     DateOfBirth = @DateOfBirth,
                     Gender = @Gender,
-                    Height = @Height,
-                    Weight = @Weight,
-                    FitnessGoal = @FitnessGoal,
-                    ActivityLevel = @ActivityLevel,
                     IsEmailVerified = @IsEmailVerified,
                     EmailVerificationToken = @EmailVerificationToken,
                     PasswordResetToken = @PasswordResetToken,
                     PasswordResetTokenExpiry = @PasswordResetTokenExpiry,
                     RefreshToken = @RefreshToken,
                     RefreshTokenExpiry = @RefreshTokenExpiry,
-                    SelectedPlan = @SelectedPlan,
-                    SubscribeToNewsletter = @SubscribeToNewsletter,
-                    UpdatedAt = @UpdatedAt,
-                    LastLoginAt = @LastLoginAt,
+                    UpdatedAt = @UpdatedAtUtc,
+                    LastLoginAt = @LastLoginAtUtc,
                     IsActive = @IsActive,
-                    ProfilePictureUrl = @ProfilePictureUrl,
                     LoginAttempts = @LoginAttempts
                 WHERE Id = @Id";
 

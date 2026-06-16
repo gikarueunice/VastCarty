@@ -1,0 +1,6 @@
+C:\Users\ADMIN\Documents\Projects\VastCarty\VastCartyDBL\obj\Debug\net10.0\VastCartyDBL.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\Projects\VastCarty\VastCartyDBL\obj\Debug\net10.0\VastCartyDBL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Documents\Projects\VastCarty\VastCartyDBL\obj\Debug\net10.0\VastCartyDBL.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Documents\Projects\VastCarty\VastCartyDBL\obj\Debug\net10.0\VastCartyDBL.AssemblyInfo.cs
+C:\Users\ADMIN\Documents\Projects\VastCarty\VastCartyDBL\obj\Debug\net10.0\VastCartyDBL.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\Projects\VastCarty\VastCartyDBL\obj\Debug\net10.0\VastCartyDBL.sourcelink.json

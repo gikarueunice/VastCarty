@@ -4,10 +4,18 @@ namespace VastCarty.ViewModels.Auth
 {
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Full name is required")]
-        [Display(Name = "Full Name")]
+        [Required(ErrorMessage = "User name is required")]
+        [Display(Name = "User Name")]
         [StringLength(100, MinimumLength = 2, ErrorMessage = "Full name must be between 2 and 100 characters")]
         public string UserName { get; set; } = string.Empty;
+        [Required(ErrorMessage = "First name is required")]
+        [Display(Name = "First Name")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "Full name must be between 2 and 100 characters")]
+        public string FirstName { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Last name is required")]
+        [Display(Name = "Last Name")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "Full name must be between 2 and 100 characters")]
+        public string LastName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Email address is required")]
         [EmailAddress(ErrorMessage = "Invalid email address")]
@@ -40,7 +48,7 @@ namespace VastCarty.ViewModels.Auth
 
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
-        [MinimumAge (18, ErrorMessage = "You must be at least 18 years old to register")]
+        [Minimum(18, ErrorMessage = "You must be at least 18 years old to register")]
         public DateTime? DateOfBirth { get; set; }
 
         [Display(Name = "Gender")]
@@ -51,5 +59,11 @@ namespace VastCarty.ViewModels.Auth
         [Range(typeof(bool), "true", "true", ErrorMessage = "You must accept the terms and conditions")]
         public bool AcceptTerms { get; set; }
 
+
+        public MinimumAgeAttribute(int minimumAge)
+        {
+            _minimumAge = minimumAge;
+        }
     }
+
 }
