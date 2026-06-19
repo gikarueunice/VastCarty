@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using VastCartyDBL.Repositories;
-using Microsoft.Data.SqlClient;
 using VastCartyDBL.UOW;
 
 namespace VastCartyDBL

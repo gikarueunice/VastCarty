@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-using System;
-using System.Threading.Tasks;
-
 namespace VastCartyDBL.Services
 {
-    public interface ISmsServices
+    public class ISmsServices
     {
         Task<bool> SendSmsAsync(string phoneNumber, string message);
         Task<bool> SendVerificationCodeAsync(string phoneNumber, string code);

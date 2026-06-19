@@ -1,0 +1,6 @@
+@VastCartyGatewayAPI_HostAddress = http://localhost:5178
+
+GET {{VastCartyGatewayAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

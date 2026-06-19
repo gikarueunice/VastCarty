@@ -23,19 +23,6 @@ namespace VastCartyDBL.Services
             _logger = logger;
 
         }
-        public Task SendRegistrationOTPAsync(string to, string otp, string userName)
-        {
-            var subject = "Welcome to FitTrack - Verify Your Email";
-            var body = $@"<p>Hi {userName},</p><p>Your verification code is: <strong>{otp}</strong></p>";
-            return SendEmailAsync(to, subject, body);
-        }
-
-        public Task Send2FAEnableEmailAsync(string to, string userName, string backupCodes)
-        {
-            var subject = "Two-Factor Authentication Enabled - FitTrack";
-            var body = $@"<p>Hi {userName},</p><p>2FA has been enabled for your account. Backup codes: {backupCodes}</p>";
-            return SendEmailAsync(to, subject, body);
-        }
 
         public async Task SendEmailAsync(string to, string subject, string body, bool isHtml = true)
         {
@@ -79,14 +66,14 @@ namespace VastCartyDBL.Services
         public async Task SendVerificationEmailAsync(string to, string verificationLink, string userName)
         {
             var subject = "Verify Your Email Address - FitTrack";
-            var body = $@"<p>Hi {userName},</p><p>Please verify your email by clicking <a href='{verificationLink}'>here</a>.</p>";
+            var body = GetVerificationEmailTemplate(userName, verificationLink);
             await SendEmailAsync(to, subject, body);
         }
 
         public async Task SendPasswordResetEmailAsync(string to, string resetLink, string userName)
         {
             var subject = "Reset Your Password - FitTrack";
-            var body = $@"<p>Hi {userName},</p><p>Reset your password using this link: <a href='{resetLink}'>Reset Password</a></p>";
+            var body = GetPasswordResetEmailTemplate(userName, resetLink);
             await SendEmailAsync(to, subject, body);
         }
         public Task SendOTPEmailAsync(string to, string otp, string purpose)

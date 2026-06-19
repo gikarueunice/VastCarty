@@ -23,8 +23,7 @@ namespace VastCartyDBL.Models
         public string? Role { get; set; }
         public string? ProfilePictureUrl { get; set; }
         public string? Gender { get; set; }
-        // Make PasswordResetToken nullable so object initializers don't require it everywhere
-        public string? PasswordResetToken { get; set; }
+        public required string PasswordResetToken { get; set; }
         public DateTime? PasswordResetTokenExpiry { get; set; }
         public bool TwoFactorEnabled { get; set; }
         public string? TwoFactorSecret { get; set; }

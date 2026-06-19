@@ -79,14 +79,14 @@ namespace VastCartyDBL.Services
         public async Task SendVerificationEmailAsync(string to, string verificationLink, string userName)
         {
             var subject = "Verify Your Email Address - FitTrack";
-            var body = $@"<p>Hi {userName},</p><p>Please verify your email by clicking <a href='{verificationLink}'>here</a>.</p>";
+            var body = GetVerificationEmailTemplate(userName, verificationLink);
             await SendEmailAsync(to, subject, body);
         }
 
         public async Task SendPasswordResetEmailAsync(string to, string resetLink, string userName)
         {
             var subject = "Reset Your Password - FitTrack";
-            var body = $@"<p>Hi {userName},</p><p>Reset your password using this link: <a href='{resetLink}'>Reset Password</a></p>";
+            var body = GetPasswordResetEmailTemplate(userName, resetLink);
             await SendEmailAsync(to, subject, body);
         }
         public Task SendOTPEmailAsync(string to, string otp, string purpose)

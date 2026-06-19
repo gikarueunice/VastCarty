@@ -73,12 +73,7 @@ namespace VastCarty.Controllers
                 };
 
                 // ONLY CREATE USER ONCE!
-                var createdUser = await _userServices.CreateUsersAsync(user);
-                if (createdUser == null)
-                {
-                    return Json(new { success = false, message = "Registration failed. Could not create user." });
-                }
-                var userId = createdUser.Id;
+                var userId = await _userServices.CreateUsersAsync(user);
 
                 // Generate OTP (6 digits)
                 var otp = new Random().Next(100000, 999999).ToString();
@@ -323,7 +318,7 @@ namespace VastCarty.Controllers
                 _pendingRegistrations[request.UserId] = newOtp;
 
                 // Resend OTP
-                await _emailServices.SendRegistrationOTPAsync(user.Email, newOtp, user.UserName);
+                await _emailServices.SendRegistrationOTPAsync(user.Email, newOtp, user.FullName);
 
                 if (!string.IsNullOrEmpty(user.PhoneNumber))
                 {

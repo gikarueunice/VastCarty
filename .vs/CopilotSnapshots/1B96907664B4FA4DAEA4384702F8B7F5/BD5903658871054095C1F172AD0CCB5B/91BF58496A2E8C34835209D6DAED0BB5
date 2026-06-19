@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authorization;
 using VastCarty.ViewModels.Auth;
 using VastCartyDBL.Models;
 using VastCartyDBL.Services;
@@ -73,12 +72,7 @@ namespace VastCarty.Controllers
                 };
 
                 // ONLY CREATE USER ONCE!
-                var createdUser = await _userServices.CreateUsersAsync(user);
-                if (createdUser == null)
-                {
-                    return Json(new { success = false, message = "Registration failed. Could not create user." });
-                }
-                var userId = createdUser.Id;
+                var userId = await _userServices.CreateUsersAsync(user);
 
                 // Generate OTP (6 digits)
                 var otp = new Random().Next(100000, 999999).ToString();
@@ -323,7 +317,7 @@ namespace VastCarty.Controllers
                 _pendingRegistrations[request.UserId] = newOtp;
 
                 // Resend OTP
-                await _emailServices.SendRegistrationOTPAsync(user.Email, newOtp, user.UserName);
+                await _emailServices.SendRegistrationOTPAsync(user.Email, newOtp, user.FullName);
 
                 if (!string.IsNullOrEmpty(user.PhoneNumber))
                 {
@@ -520,17 +514,6 @@ namespace VastCarty.Controllers
     {
         public string PhoneNumber { get; set; } = string.Empty;
         public string? Code { get; set; }
-    }
-
-    public class VerifyOTPRequest
-    {
-        public int UserId { get; set; }
-        public string Code { get; set; } = string.Empty;
-    }
-
-    public class ResendOTPRequest
-    {
-        public int UserId { get; set; }
     }
 
     public class LoginOTPRequest

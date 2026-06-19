@@ -9,7 +9,7 @@ namespace VastCartyDBL.Services
         Task SendEmailAsync(string to, string subject, string body, bool isHtml = true);
         Task SendVerificationEmailAsync(string to, string verificationLink, string userName);
         Task SendPasswordResetEmailAsync(string to, string resetLink, string userName);
-        // Note: single SendEmailAsync overload above includes isHtml default; duplicate removed
+        Task SendEmailAsync(string to, string subject, string body);
         Task SendOTPEmailAsync(string to, string otp, string purpose);
         Task Send2FADisableEmailAsync(string to, string userName);
         Task SendRegistrationOTPAsync(string to, string otp, string userName);

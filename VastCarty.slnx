@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="VastCarty/VastCarty.csproj" />
   <Project Path="VastCartyDBL/VastCartyDBL.csproj" />
+  <Project Path="VastCartyGatewayAPI/VastCartyGatewayAPI.csproj" />
 </Solution>

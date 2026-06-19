@@ -48,7 +48,7 @@ namespace VastCarty.ViewModels.Auth
 
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
-        [Minimum(18, ErrorMessage = "You must be at least 18 years old to register")]
+        [MinimumAge(18, ErrorMessage = "You must be at least 18 years old to register")]
         public DateTime? DateOfBirth { get; set; }
 
         [Display(Name = "Gender")]
@@ -59,11 +59,36 @@ namespace VastCarty.ViewModels.Auth
         [Range(typeof(bool), "true", "true", ErrorMessage = "You must accept the terms and conditions")]
         public bool AcceptTerms { get; set; }
 
-
-        public MinimumAgeAttribute(int minimumAge)
+    }   
+        public class MinimumAgeAttribute : ValidationAttribute
         {
-            _minimumAge = minimumAge;
-        }
-    }
+            private readonly int _minimumAge;
 
+            public MinimumAgeAttribute(int minimumAge)
+            {
+                _minimumAge = minimumAge;
+            }
+
+            protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+            {
+                if (value == null)
+                {
+                    return ValidationResult.Success; // Null values are handled by Required attribute
+                }
+
+                if (value is DateTime dateOfBirth)
+                {
+                    var age = DateTime.Today.Year - dateOfBirth.Year;
+                    if (dateOfBirth.Date > DateTime.Today.AddYears(-age)) age--;
+
+                    if (age < _minimumAge)
+                    {
+                        return new ValidationResult($"You must be at least {_minimumAge} years old.");
+                    }
+                }
+
+                return ValidationResult.Success;
+            }
+        }
+       
 }

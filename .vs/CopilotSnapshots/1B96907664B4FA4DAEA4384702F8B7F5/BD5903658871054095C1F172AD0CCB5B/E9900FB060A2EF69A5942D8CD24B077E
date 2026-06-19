@@ -1,4 +1,4 @@
-using VastCartyDBL.Repositories;
+﻿using VastCartyDBL.Repositories;
 using VastCartyDBL.Services;
 
 
@@ -14,10 +14,10 @@ builder.Services.AddScoped<IUserRepository>(sp=>
 
     return new UserRepository(connectionString);
 });
-builder.Services.AddScoped<IEmailServices, EmailServices>();
-builder.Services.AddScoped<IProductServices, ProductServices>();
-builder.Services.AddScoped<ISmsServices, SmsServices>();
-builder.Services.AddScoped<IUserServices, UserServices>();
+bulder.Services.AddScoped<IEmailServices, EmailServices>();
+bulder.Services.AddScoped<IProductServices, ProductServices>();
+bulder.Services.AddScoped<ISmsServices, SmsServices>();
+Bulder.Services.AddScoped<IUserServices, UserServices>();
 
 var app = builder.Build();
 
