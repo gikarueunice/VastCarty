@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="VastCarty/VastCarty.csproj" />
+  <Project Path="VastCartyAPI/VastCartyAPI.csproj" Id="3ed16a25-cf8d-452a-8e6f-9d8c66fd2472" />
   <Project Path="VastCartyDBL/VastCartyDBL.csproj" />
   <Project Path="VastCartyGatewayAPI/VastCartyGatewayAPI.csproj" />
 </Solution>
